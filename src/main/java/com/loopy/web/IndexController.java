@@ -19,7 +19,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model){
-        SessionUser user = (User) httpSession.getAttribute("user");
+        User user = (User) httpSession.getAttribute("user");
 
         if (user != null) {
             model.addAttribute("userName", user.getName());

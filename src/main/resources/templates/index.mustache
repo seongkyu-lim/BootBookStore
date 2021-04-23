@@ -1,21 +1,5 @@
-{{>layout/header}}}
+{{>layout/header}}
+<center>
 <h1>Main Page</h1>
-<div class="col-md-12">
-    <div class="row">
-        <div class="col-md-6">
-            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-            <!-- 머스테치는 if문 제공 x, true/false만 판단, 항상 최종값을 넘겨줘야한다. -->
-            {{#userName}}
-                Logged in as: <span id="user">{{userName}}</span>
-                <!-- 스프링 시큐리티에서 제공하는 로그아웃 URL, 유저네임 있는경우 로그아웃 버튼 보이게 -->
-                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-            {{/userName}}
-            <!-- 해당값 존재하지 않는 경우 -->
-            {{^userName}}
-                <!-- 스프링 시큐리티에서 제공하는 로그인 URL, userName없는 경우 로그인버튼 보이게 -->
-                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-            {{/userName}}
-        </div>
-    </div>
-    <br>
+</center>
 {{>layout/footer}}
