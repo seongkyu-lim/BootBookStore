@@ -1,6 +1,6 @@
 package com.loopy.web;
 
-import com.loopy.config.auth.dto.SessionUser;
+//import com.loopy.config.auth.dto.SessionUser;
 import com.loopy.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,12 +19,23 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model){
+/*
         User user = (User) httpSession.getAttribute("user");
 
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
-
+*/
         return "index";
+    }
+
+    @GetMapping("/posts/ml")
+    public String ml(){
+        return "ml";
+    }
+
+    @GetMapping("/posts/dl")
+    public String dl(){
+        return "dl";
     }
 }
