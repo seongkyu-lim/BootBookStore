@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
 
+//페이지와 관련된 컨트롤러
 
 //mustache는 경로 자동으로 지정됨. view resolver가 자동 처리.
 @RequiredArgsConstructor
@@ -37,5 +38,10 @@ public class IndexController {
     @GetMapping("/posts/dl")
     public String dl(){
         return "dl";
+    }
+
+    @GetMapping("posts/save")
+    public String postsSave() {
+        return "posts-save";
     }
 }
