@@ -2,6 +2,7 @@ package com.loopy.web;
 
 //import com.loopy.config.auth.dto.SessionUser;
 import com.loopy.domain.user.User;
+import com.loopy.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final HttpSession httpSession;
+    private final PostsService postsService;
 
     @GetMapping("/")
     public String index(Model model){
@@ -31,7 +33,9 @@ public class IndexController {
     }
 
     @GetMapping("/posts/ml")
-    public String ml(){
+    public String ml(Model model){
+
+        model.addAttribute("posts", postsService.findAllDesc());
         return "ml";
     }
 
