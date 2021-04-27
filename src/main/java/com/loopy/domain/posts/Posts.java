@@ -1,5 +1,6 @@
 package com.loopy.domain.posts;
 
+import com.loopy.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 //JPA annotation, 테이블과 링크될 클래스임을 나타냄.
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     //JPA ANNOTATION, 해당 테이블의 PK 필드
     @Id
@@ -36,6 +37,11 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
 }
