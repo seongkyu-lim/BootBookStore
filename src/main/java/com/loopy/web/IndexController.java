@@ -3,10 +3,12 @@ package com.loopy.web;
 //import com.loopy.config.auth.dto.SessionUser;
 import com.loopy.domain.user.User;
 import com.loopy.service.posts.PostsService;
+import com.loopy.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
 
@@ -30,6 +32,14 @@ public class IndexController {
         }
 */
         return "index";
+    }
+
+    @GetMapping("/posts/update/{id}")
+    public String postsUpdate(@PathVariable Long id, Model model) {
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post", dto);
+
+        return "posts-update";
     }
 
     @GetMapping("/posts/ml")
