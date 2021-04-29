@@ -59,7 +59,8 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                //USER로 하면 로그인 한 유저들은 다 USER로 지정.
+                .role(Role.ADMIN)
                 .build();
     }
 }
