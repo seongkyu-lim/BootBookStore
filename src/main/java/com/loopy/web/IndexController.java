@@ -1,7 +1,7 @@
 package com.loopy.web;
 
-//import com.loopy.config.auth.dto.SessionUser;
-import com.loopy.domain.user.User;
+import com.loopy.config.auth.LoginUser;
+import com.loopy.config.auth.dto.SessionUser;
 import com.loopy.service.posts.PostsService;
 import com.loopy.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -23,14 +23,12 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model){
-/*
-        User user = (User) httpSession.getAttribute("user");
+    public String index(Model model, @LoginUser SessionUser user){
 
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
-*/
+
         return "index";
     }
 
