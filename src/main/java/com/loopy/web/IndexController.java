@@ -52,7 +52,7 @@ public class IndexController {
         return "dl";
     }
 
-    @GetMapping("posts/save")
+    @GetMapping("/posts/save")
     public String postsSave() {
         return "posts-save";
     }

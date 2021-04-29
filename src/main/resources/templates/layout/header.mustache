@@ -77,7 +77,17 @@
         </form>
 
         <form class="form-inline my-2 my-lg-0">
-            <a href="/login" class="btn btn-outline-secondary" role="button">Login</a>
+            <!-- 머스테치는 if문 제공 x, true/false만 판단, 항상 최종값을 넘겨줘야한다. -->
+            {{#userName}}
+                Logged in as: <span id="user">{{userName}}</span>
+                <!-- 스프링 시큐리티에서 제공하는 로그아웃 URL, 유저네임 있는경우 로그아웃 버튼 보이게 -->
+                <a href="/logout" class="btn btn-outline-secondary" role="button">Logout</a>
+            {{/userName}}
+            <!-- 해당값 존재하지 않는 경우 -->
+            {{^userName}}
+                <!-- 스프링 시큐리티에서 제공하는 로그인 URL, userName없는 경우 로그인버튼 보이게 -->
+                <a href="/login" class="btn btn-outline-secondary" role="button">Login</a>
+            {{/userName}}
         </form>
     </div>
 </nav>
