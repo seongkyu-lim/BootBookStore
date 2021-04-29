@@ -56,4 +56,9 @@ public class IndexController {
     public String postsSave() {
         return "posts-save";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }
