@@ -1,6 +1,6 @@
 # BootBookStore
 
 
-![ex_screenshot](./src/main/resources/static/images/책방.png){: width="100%" height="100%"}
 
-<img url="./src/main/resources/static/images/책방.png" width="100%" height="100%">
+
+<img src="./src/main/resources/static/images/책방.png" width="100%" height="100%">
