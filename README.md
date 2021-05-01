@@ -3,4 +3,4 @@
 
 
 
-<img src="./src/main/resources/static/images/책방.png" width="80%" height="80%">
+<img src="./src/main/resources/static/images/책방.png" width="50%" height="50%">
