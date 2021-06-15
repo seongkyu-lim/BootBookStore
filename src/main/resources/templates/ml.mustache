@@ -13,13 +13,17 @@
         </tr>
         </thead>
         <tbody id="tbody">
+        <!-- 여기다가 category = 소설이 참인경우를 머스테치 문법으로 추가 -->
+
         {{#products}}
+           <!-- <script> if {{category}} == 'ai' { </script> -->
             <tr>
                 <td>{{id}}</td>
                 <td><a href="/products/update/{{id}}">{{title}}</a></td>
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>
+           <!-- <% } %> -->
         {{/products}}
         </tbody>
     </table>

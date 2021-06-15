@@ -24,11 +24,15 @@ public class Products extends BaseTimeEntity {
 
     private String author;
 
+    //선언하지 않으면 기본값.
+    private String category;
+
     @Builder
-    public Products(String title, String content, String author){
+    public Products(String title, String content, String author, String category){
         this.title = title;
         this.content = content;
         this.author = author;
+        this.category = category;
     }
     public void update(String title, String content) {
         this.title = title;
