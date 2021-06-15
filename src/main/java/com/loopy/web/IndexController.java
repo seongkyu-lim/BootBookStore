@@ -3,6 +3,7 @@ package com.loopy.web;
 import com.loopy.config.auth.LoginUser;
 import com.loopy.config.auth.dto.SessionUser;
 import com.loopy.service.posts.PostsService;
+import com.loopy.service.products.ProductsService;
 import com.loopy.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class IndexController {
 
     private final HttpSession httpSession;
     private final PostsService postsService;
+    private final ProductsService productsService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
@@ -43,18 +45,25 @@ public class IndexController {
     @GetMapping("/posts/ml")
     public String ml(Model model){
 
-        model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("products", productsService.findAllDesc());
         return "ml";
     }
 
-    @GetMapping("/posts/dl")
-    public String dl(){
-        return "dl";
+    @GetMapping("/posts/community")
+    public String community(Model model){
+
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "community";
     }
 
     @GetMapping("/posts/save")
     public String postsSave() {
         return "posts-save";
+    }
+
+    @GetMapping("/products/save")
+    public String productsSave() {
+        return "products-save";
     }
 
     @GetMapping("/login")
