@@ -92,7 +92,8 @@ var mainProducts = {
             title: $('#title').val(),
             author: $('#author').val(),
             content: $('#content').val(),
-            category: $('#category').val()
+            category: $('#category').val(),
+            img: $('#img').val()
         };
 
         $.ajax({

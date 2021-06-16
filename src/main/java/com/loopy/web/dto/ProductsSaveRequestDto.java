@@ -12,13 +12,15 @@ public class ProductsSaveRequestDto {
     private String content;
     private String author;
     private String category;
+    private String img;
 
     @Builder
-    public ProductsSaveRequestDto(String title, String content, String author, String category) {
+    public ProductsSaveRequestDto(String title, String content, String author, String category, String img) {
         this.title = title;
         this.content = content;
         this.author = author;
         this.category = category;
+        this.img = img;
 
     }
 
@@ -28,6 +30,7 @@ public class ProductsSaveRequestDto {
                 .content(content)
                 .author(author)
                 .category(category)
+                .img(img)
                 .build();
     }
 }

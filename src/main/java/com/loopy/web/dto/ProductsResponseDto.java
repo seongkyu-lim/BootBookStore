@@ -10,6 +10,8 @@ public class ProductsResponseDto {
     private String content;
     private String author;
     private String category;
+    private String img;
+
 
     public ProductsResponseDto(Products entity){
         this.id = entity.getId();
@@ -17,5 +19,6 @@ public class ProductsResponseDto {
         this.content  = entity.getContent();
         this.author = entity.getAuthor();
         this.category = entity.getCategory();
+        this.img = entity.getImg();
     }
 }
